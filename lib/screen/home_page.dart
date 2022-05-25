@@ -1,10 +1,10 @@
 import 'dart:ui';
-
-import 'package:assesment/core/constents.dart';
 import 'package:flutter/material.dart';
 
+import 'package:assesment/core/constents.dart';
+import 'package:assesment/widgets/slider_division.dart';
+
 import '../widgets/green_container.dart';
-import '../widgets/slider_num.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,7 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  double rating = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +31,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(8.0),
         child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             // crossAxisAlignment: CrossAxisAlignment.center,
@@ -45,14 +44,7 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                "Solid Water Status",
-                style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 0.7),
-              ),
+              Text("Solid Water Status", style: titleGrey),
               const SizedBox(
                 height: 10,
               ),
@@ -73,47 +65,10 @@ class _HomePageState extends State<HomePage> {
                     //YelloBorderContainer
                     ProfileContainer()
                   ]),
-              Column(
-                children: [
-                  kheight20,
-                  Text("Forcast - Next 0 days"),
-                  Slider(
-                      activeColor: Colors.red,
-                      inactiveColor: Colors.yellow,
-                      value: rating,
-                      onChanged: (newRating) {
-                        setState(() => rating = newRating);
-                      }),
-                  Container(
-                    width: 300,
-                    height: 30,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      // crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SliderNum(num: "0"),
-                        kwidth20,
-                        SliderNum(num: "1"),
-                        kwidth20,
-                        SliderNum(num: "2"),
-                        kwidth20,
-                        SliderNum(num: "3"),
-                        kwidth20,
-                        SliderNum(num: "4"),
-                        kwidth20,
-                        SliderNum(num: "5"),
-                        kwidth20,
-                        SliderNum(num: "6"),
-                        kwidth20,
-                        SliderNum(num: "7"),
-                        kwidth20,
-                        SliderNum(num: "8"),
-                        kwidth20,
-                        SliderNum(num: "9"),
-                      ],
-                    ),
-                  )
-                ],
+              kheight20,
+              SliderDivision(),
+              Row(
+                children: [],
               )
             ]),
       ),
@@ -224,7 +179,7 @@ class ProfileContainer extends StatelessWidget {
                     ),
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
-                            Color.fromARGB(255, 255, 208, 100))),
+                            Color.fromARGB(255, 241, 190, 71))),
                   ),
                 ),
               ],
