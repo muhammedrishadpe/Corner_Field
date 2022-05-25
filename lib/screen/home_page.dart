@@ -4,10 +4,17 @@ import 'package:assesment/core/constents.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/green_container.dart';
+import '../widgets/slider_num.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  double rating = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,20 +56,65 @@ class HomePage extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                //greenContainer
-                Column(
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    GreenContainer(title: "2.48\"", ft: "1 ft"),
-                    kheight20,
-                    GreenContainer(title: "3.19\"", ft: "2 ft"),
-                    kheight20,
-                    GreenContainer(title: "3.11\"", ft: "3 ft"),
-                  ],
-                ),
-                //YelloBorderContainer
-                ProfileContainer()
-              ]),
+                    //greenContainer
+                    Column(
+                      children: [
+                        GreenContainer(title: "2.48\"", ft: "1 ft"),
+                        kheight20,
+                        GreenContainer(title: "3.19\"", ft: "2 ft"),
+                        kheight20,
+                        GreenContainer(title: "3.11\"", ft: "3 ft"),
+                      ],
+                    ),
+                    //YelloBorderContainer
+                    ProfileContainer()
+                  ]),
+              Column(
+                children: [
+                  kheight20,
+                  Text("Forcast - Next 0 days"),
+                  Slider(
+                      activeColor: Colors.red,
+                      inactiveColor: Colors.yellow,
+                      value: rating,
+                      onChanged: (newRating) {
+                        setState(() => rating = newRating);
+                      }),
+                  Container(
+                    width: 300,
+                    height: 30,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      // crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SliderNum(num: "0"),
+                        kwidth20,
+                        SliderNum(num: "1"),
+                        kwidth20,
+                        SliderNum(num: "2"),
+                        kwidth20,
+                        SliderNum(num: "3"),
+                        kwidth20,
+                        SliderNum(num: "4"),
+                        kwidth20,
+                        SliderNum(num: "5"),
+                        kwidth20,
+                        SliderNum(num: "6"),
+                        kwidth20,
+                        SliderNum(num: "7"),
+                        kwidth20,
+                        SliderNum(num: "8"),
+                        kwidth20,
+                        SliderNum(num: "9"),
+                      ],
+                    ),
+                  )
+                ],
+              )
             ]),
       ),
     );
