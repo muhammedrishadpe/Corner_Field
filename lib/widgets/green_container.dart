@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
 class GreenContainer extends StatelessWidget {
-  const GreenContainer({
-    Key? key,
-  }) : super(key: key);
-
+  GreenContainer({required this.title, required this.ft});
+  String title;
+  String ft;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Text(
-          "1 ft",
+        Text(
+          ft,
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.black,
@@ -21,15 +20,16 @@ class GreenContainer extends StatelessWidget {
           width: 10,
         ),
         Container(
-          width: 70,
-          height: 45,
-          color: Colors.green,
+          width: 90,
+          height: 65,
+          color: Color.fromARGB(255, 162, 225, 164),
           child: Center(
             child: Text(
-              "2.48",
+              title,
               style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w700,
+                color: Colors.white,
+                fontWeight: FontWeight.w600,
+                fontSize: 20,
               ),
             ),
           ),

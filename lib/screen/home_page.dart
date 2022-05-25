@@ -1,3 +1,6 @@
+import 'dart:ui';
+
+import 'package:assesment/core/constents.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/green_container.dart';
@@ -9,6 +12,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         leading: const Icon(
           Icons.arrow_left,
           color: Colors.black,
@@ -26,55 +30,156 @@ class HomePage extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             // crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 10,
-              ),
+              kheight20,
               const Text(
                 "Zone 3",
-                style: TextStyle(color: Colors.black, fontSize: 10),
+                style: TextStyle(color: Colors.black, fontSize: 14),
               ),
               const SizedBox(
-                height: 7,
+                height: 10,
               ),
               const Text(
                 "Solid Water Status",
                 style: TextStyle(
                     color: Colors.grey,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 0.6),
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 0.7),
+              ),
+              const SizedBox(
+                height: 10,
               ),
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 //greenContainer
                 Column(
                   children: [
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    GreenContainer(),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    GreenContainer(),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    GreenContainer(),
+                    GreenContainer(title: "2.48\"", ft: "1 ft"),
+                    kheight20,
+                    GreenContainer(title: "3.19\"", ft: "2 ft"),
+                    kheight20,
+                    GreenContainer(title: "3.11\"", ft: "3 ft"),
                   ],
                 ),
                 //YelloBorderContainer
-                Column(
-                  children: [
-                    Container(
-                      width: 120,
-                      height: 80,
-                      color: Colors.red,
-                    )
-                  ],
-                )
+                ProfileContainer()
               ]),
             ]),
       ),
+    );
+  }
+}
+
+class ProfileContainer extends StatelessWidget {
+  const ProfileContainer({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          width: 185,
+          height: 135,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(
+              color: Color.fromARGB(255, 255, 238, 80),
+              width: 1.5,
+            ),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  "Water in Profile",
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.grey,
+                  ),
+                ),
+                Text(
+                  "8.78\"",
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                ),
+                Text(
+                  "72% Full",
+                  style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        Container(
+          width: 185,
+          height: 135,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(
+              color: Color.fromARGB(255, 255, 238, 80),
+              width: 1.5,
+            ),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  "To Refill Profile",
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.grey,
+                  ),
+                ),
+                Text(
+                  "3.46\"",
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black,
+                  ),
+                ),
+                SizedBox(
+                  height: 7,
+                ),
+                SizedBox(
+                  width: 70,
+                  height: 40,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Details",
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.normal),
+                    ),
+                    style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(
+                            Color.fromARGB(255, 255, 208, 100))),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
