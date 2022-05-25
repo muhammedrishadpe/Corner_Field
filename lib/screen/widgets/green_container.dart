@@ -22,7 +22,7 @@ class GreenContainer extends StatelessWidget {
         Container(
           width: 90,
           height: 65,
-          color: Color.fromARGB(255, 162, 225, 164),
+          color: Color.fromARGB(255, 132, 235, 135),
           child: Center(
             child: Text(
               title,
