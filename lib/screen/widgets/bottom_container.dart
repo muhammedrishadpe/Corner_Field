@@ -14,7 +14,6 @@ class BottomContainer extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         width: size.width,
-        height: size.height,
         child: Row(
           children: [
             Column(
@@ -98,7 +97,7 @@ class BottomContainer extends StatelessWidget {
             Column(
               children: [
                 Container(
-                  width: 230,
+                  width: size.width - 175,
                   height: 200,
                   decoration: kDecoration,
                   child: Column(
