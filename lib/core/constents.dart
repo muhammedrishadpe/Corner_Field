@@ -30,5 +30,11 @@ BoxDecoration kDecoration = BoxDecoration(
     color: Color.fromARGB(255, 255, 238, 80),
     width: 1.5,
   ),
+  boxShadow: [
+    BoxShadow(
+      color: Colors.grey,
+      blurRadius: 5.0,
+    ),
+  ],
   borderRadius: BorderRadius.circular(8),
 );
