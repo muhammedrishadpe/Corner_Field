@@ -52,8 +52,8 @@ class ProfileContainer extends StatelessWidget {
           height: 15,
         ),
         Container(
-          width: 185,
-          height: 135,
+          width: 180,
+          height: 125,
           decoration: kDecoration,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -91,7 +91,7 @@ class ProfileContainer extends StatelessWidget {
                     ),
                     style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
-                            Color.fromARGB(255, 252, 181, 17))),
+                            Color.fromARGB(255, 252, 194, 58))),
                   ),
                 ),
               ],

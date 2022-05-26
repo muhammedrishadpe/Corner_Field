@@ -32,11 +32,3 @@ BoxDecoration kDecoration = BoxDecoration(
   ),
   borderRadius: BorderRadius.circular(8),
 );
-
-//Hex Color
-hexColor(String colorhexcode) {
-  String colornew = '0xff' + colorhexcode;
-  colornew = colornew.replaceAll('#', "");
-  int colorint = int.parse(colornew);
-  return colorint;
-}
